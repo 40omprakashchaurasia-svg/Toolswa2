@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toolswa – Free Online Multi-Tools & PDF Utilities</title>
+    <meta name="description" content="Merge, compress, and split PDFs, optimize images, generate QR codes, count words, and calculate GST. 100% free, private browser-based tools." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Toolswa – Free Online Multi-Tools & PDF Utilities" />
+    <meta property="og:description" content="Merge, compress, and split PDFs, optimize images, generate QR codes, count words, and calculate GST directly in your browser." />
+    <meta property="og:site_name" content="Toolswa" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Toolswa – Free Online Multi-Tools & PDF Utilities" />
+    <meta name="twitter:description" content="Merge, compress, and split PDFs, optimize images, generate QR codes, count words, and calculate GST directly in your browser." />
+    
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Toolswa",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "description": "Every tool you need to work with PDFs, images, text, and calculations in one place. 100% free, browser-based, and secure.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+  </head>
+  <body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+      <div class="container header-container">
+        <!-- Zone 1: Brand Wordmark -->
+        <a href="index.html" class="brand" aria-label="Toolswa Home">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <path d="M10 13h4"/>
+              <path d="M12 11v6"/>
+            </svg>
+          </div>
+          <span class="brand-name">Tools<span>wa</span></span>
+        </a>
+
+        <!-- Zone 2: Navigation Links -->
+        <nav class="nav-menu" id="nav-menu">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="#all-tools" class="nav-link">All Tools</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="contact.html" class="nav-link">Contact Us</a>
+        </nav>
+
+        <!-- Zone 3: Actions -->
+        <div class="header-actions">
+          <button class="lang-switch" id="lang-switch-btn" title="Toggle English / Hindi">🇬🇧 EN</button>
+          
+          <button class="btn-icon" id="theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+            <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+          </button>
+
+          <a href="#" class="btn-zip-download js-open-hosting-modal" title="Shared Hosting Deployment ZIP">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>Hosting ZIP</span>
+          </a>
+
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Open Mobile Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-pill">
+            <span class="hero-pill-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              100% Client-Side Privacy
+            </span>
+            <span aria-hidden="true">·</span>
+            <span>Zero Server Uploads</span>
+            <span aria-hidden="true">·</span>
+            <span>Shared Hosting Ready</span>
+          </div>
+
+          <h1 class="hero-title">
+            Every tool you need to work with <span>PDFs & Files</span> in one place
+          </h1>
+          
+          <p class="hero-subtitle">
+            Merge, split, and compress PDFs, optimize images, generate QR codes, analyze text, and calculate GST. Completely free, secure, and fast.
+          </p>
+
+          <!-- Search Bar -->
+          <div class="search-wrapper">
+            <div class="search-box">
+              <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input type="text" id="tool-search" class="search-input" placeholder="Search any tool (e.g., merge, compress, split, gst, qr)..." autocomplete="off" />
+              <button class="search-clear" id="search-clear" title="Clear search">✕</button>
+            </div>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="category-tabs" id="category-tabs">
+            <button class="category-tab active" data-category="all">All Tools (8)</button>
+            <button class="category-tab" data-category="pdf">PDF Tools (3)</button>
+            <button class="category-tab" data-category="image">Image Tools (3)</button>
+            <button class="category-tab" data-category="utility">Text & Calculators (2)</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tools Grid Section -->
+      <section class="tools-section" id="all-tools">
+        <div class="container">
+          <div class="tools-grid" id="tools-grid">
+
+            <!-- Tool 1: PDF Merge -->
+            <a href="tools/pdf-merge.html" class="tool-card" data-category="pdf" data-title="merge pdf combine pdf documents" data-tags="pdf merge combine join unite reorder pages">
+              <span class="tool-badge">Popular</span>
+              <div class="tool-card-icon icon-pdf-merge">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M8 2h8a2 2 0 012 2v16a2 2 0 01-2 2H8a2 2 0 01-2-2V4a2 2 0 012-2z"/>
+                  <path d="M4 6h2v12H4z"/>
+                  <path d="M18 6h2v12h-2z"/>
+                </svg>
+              </div>
+              <h2 class="tool-card-title">Merge PDF</h2>
+              <p class="tool-card-desc">Combine multiple PDF files into a single unified document in any custom order.</p>
+              <div class="tool-card-cta">
+                <span>Merge Files</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Tool 2: PDF Compressor -->
+            <a href="tools/pdf-compressor.html" class="tool-card" data-category="pdf" data-title="compress pdf reduce size optimize" data-tags="pdf compress reduce shrink size optimize mb kb">
+              <span class="tool-badge">Popular</span>
+              <div class="tool-card-icon icon-pdf-compress">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 14h6m-3-3v6M20 10h-6m3-3v6"/>
+                  <rect x="2" y="3" width="20" height="18" rx="2" stroke-dasharray="2 2"/>
+                </svg>
+              </div>
+              <h2 class="tool-card-title">Compress PDF</h2>
+              <p class="tool-card-desc">Reduce PDF file size with lossless optimization or strong raster compression.</p>
+              <div class="tool-card-cta">
+                <span>Compress File</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Tool 3: PDF Split -->
+            <a href="tools/pdf-split.html" class="tool-card" data-category="pdf" data-title="split pdf extract pages separate" data-tags="pdf split extract pages cut range separate">
+              <span class="tool-badge">PDF</span>
+              <div class="tool-card-icon icon-pdf-split">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="8" y1="13" x2="16" y2="13"/>
+                  <line x1="12" y1="10" x2="12" y2="16"/>
+                </svg>
+              </div>
+              <h2 class="tool-card-title">Split PDF</h2>
+              <p class="tool-card-desc">Extract specific page ranges or save every single page as a standalone PDF.</p>
+              <div class="tool-card-cta">
+                <span>Split Pages</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Tool 4: Image Compressor -->
+            <a href="tools/image-compressor.html" class="tool-card" data-category="image" data-title="compress image photo picture jpg png webp" data-tags="image compress photo jpg jpeg png webp reduce size">
+              <span class="tool-badge">Image</span>
+              <div class="tool-card-icon icon-img-compress">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <h2 class="tool-card-title">Image Compressor</h2>
+              <p class="tool-card-desc">Compress JPG, PNG, and WebP images with a live slider and instant side-by-side preview.</p>
+              <div class="tool-card-cta">
+                <span>Compress Images</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Tool 5: Image Resizer -->
+            <a href="tools/image-resizer.html" class="tool-card" data-category="image" data-title="resize image dimensions pixels percentage" data-tags="image resize scale dimensions width height pixels crop">
+              <span class="tool-badge">Image</span>
+              <div class="tool-card-icon icon-img-resize">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 3 21 3 21 9"/>
+                  <polyline points="9 21 3 21 3 15"/>
+                  <line x1="21" y1="3" x2="14" y2="10"/>
+                  <line x1="3" y1="21" x2="10" y2="14"/>
+                </svg>
+              </div>
+              <h2 class="tool-card-title">Image Resizer</h2>
+              <p class="tool-card-desc">Resize pictures by exact pixel dimensions or presets while preserving aspect ratio.</p>
+              <div class="tool-card-cta">
+                <span>Resize Picture</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Tool 6: QR Code Generator -->
+            <a href="tools/qr-generator.html" class="tool-card" data-category="image" data-title="qr code generator barcode wifi url" data-tags="qr code generator link url wifi barcode text contact">
+              <span class="tool-badge">Popular</span>
+              <div class="tool-card-icon icon-qr">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"/>
+                  <rect x="14" y="3" width="7" height="7"/>
+                  <rect x="3" y="14" width="7" height="7"/>
+                  <path d="M14 14h3v3h-3zM17 17h4v4h-4zM14 20h3v1h-3z"/>
+                </svg>
+              </div>
+              <h2 class="tool-card-title">QR Code Generator</h2>
+              <p class="tool-card-desc">Create custom colored QR codes for websites, Wi-Fi networks, text, and email.</p>
+              <div class="tool-card-cta">
+                <span>Generate QR</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Tool 7: Word Counter -->
+            <a href="tools/word-counter.html" class="tool-card" data-category="utility" data-title="word counter character count reading time" data-tags="word counter characters sentences paragraphs reading time text length">
+              <span class="tool-badge">Utility</span>
+              <div class="tool-card-icon icon-word">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="17" y1="10" x2="3" y2="10"/>
+                  <line x1="21" y1="6" x2="3" y2="6"/>
+                  <line x1="21" y1="14" x2="3" y2="14"/>
+                  <line x1="13" y1="18" x2="3" y2="18"/>
+                </svg>
+              </div>
+              <h2 class="tool-card-title">Word Counter</h2>
+              <p class="tool-card-desc">Analyze text metrics in real time: words, characters, sentences, paragraphs, and reading duration.</p>
+              <div class="tool-card-cta">
+                <span>Count Words</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Tool 8: GST Calculator -->
+            <a href="tools/gst-calculator.html" class="tool-card" data-category="utility" data-title="gst calculator tax rate 5 12 18 28 cgst sgst" data-tags="gst calculator tax finance cgst sgst igst invoice inclusive exclusive">
+              <span class="tool-badge">Finance</span>
+              <div class="tool-card-icon icon-gst">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="2" width="16" height="20" rx="2"/>
+                  <line x1="8" y1="6" x2="16" y2="6"/>
+                  <line x1="16" y1="14" x2="16" y2="18"/>
+                  <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/>
+                </svg>
+              </div>
+              <h2 class="tool-card-title">GST Calculator</h2>
+              <p class="tool-card-desc">Calculate GST inclusive and exclusive with 0%, 5%, 12%, 18%, 28% and CGST/SGST breakdown.</p>
+              <div class="tool-card-cta">
+                <span>Calculate GST</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Empty State for Search -->
+            <div class="no-results" id="no-results">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <h3>No matching tools found</h3>
+              <p>Try searching for "PDF", "image", "compress", "word", or "GST".</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Shared Hosting Deployment Section -->
+      <section class="container">
+        <div class="hosting-banner">
+          <div class="hosting-content">
+            <span class="hosting-tag">Shared Hosting Compatible</span>
+            <h2 class="hosting-title">Deploy Toolswa to Hostinger, cPanel or Apache in Seconds</h2>
+            <p class="hosting-desc">
+              Built with 100% static HTML5, CSS3, and client-side JavaScript. No Node.js runtime, no npm build step, and no database required. Extract directly into your <code>public_html</code> directory.
+            </p>
+          </div>
+          <div class="hosting-actions">
+            <a href="toolswa-shared-hosting.zip" download="toolswa-shared-hosting.zip" class="btn-white" id="download-zip-direct-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download Complete ZIP
+            </a>
+            <button class="btn-outline-white js-open-hosting-modal">
+              View Deployment Steps
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Toolswa -->
+      <section class="why-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Built for Speed & Privacy</div>
+            <h2 class="section-title">Why Professionals Choose Toolswa</h2>
+            <p class="section-subtitle">A privacy-first suite engineered to run directly in your web browser with zero telemetry.</p>
+          </div>
+
+          <div class="why-grid">
+            <div class="why-card">
+              <div class="why-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0110 0v4"/>
+                </svg>
+              </div>
+              <h4>100% Client-Side Privacy</h4>
+              <p>Your documents and images are processed locally in your browser memory. Files are never transmitted to external servers or stored in any database.</p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+              <h4>Instant Local Processing</h4>
+              <p>Say goodbye to slow upload queues and network buffering. Processing utilizes your device's native hardware for instant results.</p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+              </div>
+              <h4>No Hidden Fees or Limits</h4>
+              <p>Every tool is completely free with no subscriptions, account registrations, watermarks, or artificial file quantity restrictions.</p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                  <line x1="6" y1="6" x2="6.01" y2="6"/>
+                  <line x1="6" y1="18" x2="6.01" y2="18"/>
+                </svg>
+              </div>
+              <h4>Zero Server Dependencies</h4>
+              <p>Engineered without Node.js or server-side backend logic. Runs out of the box on standard Hostinger, GoDaddy, Namecheap, or cPanel hosting.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3-Step Flow -->
+      <section class="steps-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Simple Workflow</div>
+            <h2 class="section-title">How Toolswa Works</h2>
+            <p class="section-subtitle">No accounts, no software installations. High performance in 3 easy steps.</p>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <h4>Select or Drop Files</h4>
+              <p>Drag and drop your PDFs, photos, or text directly into the designated tool area.</p>
+            </div>
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <h4>Customize Options</h4>
+              <p>Fine-tune compression levels, page ranges, resize dimensions, or GST percentages.</p>
+            </div>
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <h4>Download Instantly</h4>
+              <p>Download your optimized, merged, or split files directly to your device with one click.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="faq-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Got Questions?</div>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Learn more about our architecture, privacy guarantees, and deployment.</p>
+          </div>
+
+          <div class="faq-accordion">
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Are my files uploaded or stored on any server?</span>
+                <span class="faq-icon">▼</span>
+              </button>
+              <div class="faq-answer">
+                No. Toolswa processes all documents and images exclusively inside your web browser using HTML5 Canvas, WebAssembly, and PDF-Lib. Your files never leave your computer or phone, guaranteeing 100% confidentiality.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How do I host Toolswa on Hostinger or cPanel shared hosting?</span>
+                <span class="faq-icon">▼</span>
+              </button>
+              <div class="faq-answer">
+                Toolswa contains only static HTML, CSS, JavaScript, and asset files with relative links. Click "Download Complete ZIP", log in to your Hostinger or cPanel File Manager, upload the ZIP into the <code>public_html</code> directory, and extract it. Your website will be live immediately without needing npm or Node.js!
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How does browser-based PDF compression work?</span>
+                <span class="faq-icon">▼</span>
+              </button>
+              <div class="faq-answer">
+                Toolswa offers two compression methods: Smart Lossless optimization (which cleans duplicate fonts, removes redundant metadata, and compacts PDF stream dictionaries) and Visual Rasterization (which renders pages via PDF.js to high-efficiency JPEGs at customizable DPI and repackages them into a compact document).
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How do I deploy Toolswa on GitHub and Netlify?</span>
+                <span class="faq-icon">▼</span>
+              </button>
+              <div class="faq-answer">
+                Toolswa is pre-configured for instant Netlify static hosting with <code>netlify.toml</code> and <code>_redirects</code>. Simply upload the files to your GitHub repository (with <code>index.html</code> at the repository root), connect Netlify to your GitHub repo, leave the Build Command blank, set Publish Directory to <code>.</code> (the root), and deploy. All 8 tools, clean URLs, and custom 404 pages work out of the box with zero errors!
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Is there any file limit or fee to use Toolswa?</span>
+                <span class="faq-icon">▼</span>
+              </button>
+              <div class="faq-answer">
+                There are zero limits and no fees. Toolswa is completely free for personal and commercial usage without watermarks or registration walls.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="brand">
+              <div class="brand-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                </svg>
+              </div>
+              <span class="brand-name">Tools<span>wa</span></span>
+            </a>
+            <p>Every tool you need to work with PDFs, images, text, and calculations in one place. 100% free and private browser processing.</p>
+            <div class="footer-security-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              Zero Server Uploads · 100% Private
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h5>PDF Tools</h5>
+            <ul class="footer-links">
+              <li><a href="tools/pdf-merge.html">Merge PDF</a></li>
+              <li><a href="tools/pdf-compressor.html">Compress PDF</a></li>
+              <li><a href="tools/pdf-split.html">Split PDF</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Image & Text</h5>
+            <ul class="footer-links">
+              <li><a href="tools/image-compressor.html">Image Compressor</a></li>
+              <li><a href="tools/image-resizer.html">Image Resizer</a></li>
+              <li><a href="tools/qr-generator.html">QR Code Generator</a></li>
+              <li><a href="tools/word-counter.html">Word Counter</a></li>
+              <li><a href="tools/gst-calculator.html">GST Calculator</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul class="footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 Toolswa. All rights reserved. Built with vanilla HTML5, CSS3, & JS.</div>
+          <div class="footer-bottom-links">
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="sitemap.xml">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Deployment Guide Modal (Netlify, GitHub, & Shared Hosting) -->
+    <div class="modal-overlay" id="hosting-modal">
+      <div class="modal-card">
+        <button class="modal-close" id="close-hosting-modal" aria-label="Close modal">✕</button>
+        <h3 class="modal-title">Deployment Guide (GitHub, Netlify & Shared Hosting)</h3>
+        <p class="modal-subtitle">Follow these quick steps to host Toolswa online with zero 404 errors.</p>
+
+        <!-- Guide Mode Tabs -->
+        <div style="display:flex; gap:8px; margin-bottom:24px; border-bottom:1px solid var(--border-color); padding-bottom:12px;">
+          <button type="button" class="category-tab active" id="tab-btn-netlify" style="cursor:pointer;">🚀 GitHub + Netlify (Free)</button>
+          <button type="button" class="category-tab" id="tab-btn-cpanel" style="cursor:pointer;">🌐 Hostinger / cPanel</button>
+        </div>
+        
+        <!-- Netlify Section -->
+        <div id="guide-section-netlify">
+          <div class="guide-step">
+            <div class="guide-step-num">1</div>
+            <div class="guide-step-body">
+              <h5>Upload to GitHub</h5>
+              <p>Create a repository named <code>toolswa</code> on GitHub. Push all project files ensuring <code>index.html</code> is directly at the repository root.</p>
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="guide-step-num">2</div>
+            <div class="guide-step-body">
+              <h5>Connect GitHub to Netlify</h5>
+              <p>Log in to <a href="https://app.netlify.com" target="_blank" rel="noopener" style="color:var(--primary); font-weight:700;">Netlify.com</a>, click <strong>"Add new site"</strong> → <strong>"Import an existing project"</strong>, and choose your <code>toolswa</code> GitHub repo.</p>
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="guide-step-num">3</div>
+            <div class="guide-step-body">
+              <h5>Exact Netlify Build Settings</h5>
+              <p>
+                • <strong>Base directory:</strong> Leave EMPTY<br>
+                • <strong>Build command:</strong> Leave EMPTY<br>
+                • <strong>Publish directory:</strong> <code>.</code> (Root directory)
+              </p>
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="guide-step-num">4</div>
+            <div class="guide-step-body">
+              <h5>Zero 404 Errors Guaranteed</h5>
+              <p>Toolswa includes pre-configured <code>netlify.toml</code> and <code>_redirects</code> for clean tool URLs (e.g. <code>/tools/pdf-merge</code>) and custom 404 page handling!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- cPanel Section -->
+        <div id="guide-section-cpanel" style="display:none;">
+          <div class="guide-step">
+            <div class="guide-step-num">1</div>
+            <div class="guide-step-body">
+              <h5>Download the ZIP Archive</h5>
+              <p>Click the <strong>Download Complete ZIP</strong> button below to get <code>toolswa-shared-hosting.zip</code>.</p>
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="guide-step-num">2</div>
+            <div class="guide-step-body">
+              <h5>Open File Manager in cPanel or Hostinger</h5>
+              <p>Navigate to the <code>public_html/</code> root folder of your domain in your web hosting File Manager.</p>
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="guide-step-num">3</div>
+            <div class="guide-step-body">
+              <h5>Upload & Extract</h5>
+              <p>Upload the ZIP and click <strong>Extract</strong> directly inside <code>public_html/</code> so that <code>index.html</code> sits at the root.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:24px; display:flex; justify-content:space-between; align-items:center;">
+          <a href="README.md" target="_blank" style="font-size:13px; font-weight:600; color:var(--primary);">
+            View full README.md →
+          </a>
+          <a href="toolswa-shared-hosting.zip" download="toolswa-shared-hosting.zip" class="btn-primary-lg" style="padding:10px 24px; font-size:14px;">
+            Download Complete ZIP
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

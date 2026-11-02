@@ -1,0 +1,16 @@
+# Netlify Redirect Rules for Toolswa
+/tools/pdf-merge            /tools/pdf-merge.html         200
+/tools/pdf-compressor       /tools/pdf-compressor.html    200
+/tools/pdf-split            /tools/pdf-split.html         200
+/tools/image-compressor     /tools/image-compressor.html  200
+/tools/image-resizer        /tools/image-resizer.html     200
+/tools/qr-generator         /tools/qr-generator.html      200
+/tools/word-counter         /tools/word-counter.html      200
+/tools/gst-calculator       /tools/gst-calculator.html    200
+
+/about                      /about.html                   200
+/contact                    /contact.html                 200
+/privacy-policy             /privacy-policy.html          200
+/terms                      /terms.html                   200
+
+/*                          /404.html                     404

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compress PDF Online – Reduce File Size Free – Toolswa</title>
+    <meta name="description" content="Reduce PDF file size securely in your browser. Choose between lossless optimization and high-ratio compression." />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Compress PDF Online – Toolswa" />
+    <meta property="og:description" content="Reduce PDF file size securely in your browser. Fast, 100% private, and free." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/tools.css" />
+
+    <!-- PDF-Lib & PDF.js Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.9/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+      <div class="container header-container">
+        <a href="../index.html" class="brand" aria-label="Toolswa Home">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+          </div>
+          <span class="brand-name">Tools<span>wa</span></span>
+        </a>
+
+        <nav class="nav-menu" id="nav-menu">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="../index.html#all-tools" class="nav-link">All Tools</a>
+          <a href="../about.html" class="nav-link">About Us</a>
+          <a href="../contact.html" class="nav-link">Contact Us</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="btn-icon" id="theme-toggle-btn" title="Toggle Dark/Light Mode">
+            <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+          </button>
+          <a href="../index.html" class="btn-secondary-sm">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="tool-workspace">
+      <!-- Tool Page Header -->
+      <section class="tool-page-header">
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../index.html#all-tools">PDF Tools</a>
+            <span>/</span>
+            <span class="current">Compress PDF</span>
+          </div>
+          <h1 class="tool-header-title">Compress PDF File</h1>
+          <p class="tool-header-subtitle">Reduce PDF file size while maintaining optimal visual quality. 100% private in-browser compression.</p>
+        </div>
+      </section>
+
+      <div class="container tool-container">
+        <!-- Privacy Notice -->
+        <div class="alert-box alert-info">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          <div>
+            <strong>100% Browser Processing:</strong> Your PDF is compressed locally on your computer. Files are never uploaded to any remote server.
+          </div>
+        </div>
+
+        <!-- Upload Dropzone -->
+        <div class="upload-dropzone" id="dropzone">
+          <div class="upload-icon-circle">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 14h6m-3-3v6M20 10h-6m3-3v6"/>
+              <rect x="2" y="3" width="20" height="18" rx="2" stroke-dasharray="2 2"/>
+            </svg>
+          </div>
+          <div class="upload-btn-main">
+            Select PDF file
+          </div>
+          <p class="upload-hint">or drop PDF file here</p>
+          <p class="upload-formats">Supports standard PDF documents</p>
+          <input type="file" id="file-input" class="file-input-hidden" accept="application/pdf" />
+        </div>
+
+        <!-- Configuration Panel -->
+        <div class="tool-controls-panel" id="config-panel" style="display:none;">
+          <div class="controls-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+            </svg>
+            Compression Settings
+          </div>
+
+          <div style="margin-bottom:20px; font-size:14px;" id="file-details"></div>
+
+          <label class="form-label">Choose Compression Level</label>
+          <div class="options-grid">
+            <div class="option-card" data-level="lossless">
+              <div class="option-header">
+                <span class="option-title">Smart Lossless</span>
+              </div>
+              <p class="option-desc">Removes redundant metadata and compacts object stream dictionaries without re-encoding images.</p>
+            </div>
+
+            <div class="option-card active" data-level="medium">
+              <div class="option-header">
+                <span class="option-title">Recommended (Medium)</span>
+              </div>
+              <p class="option-desc">Optimal balance between file size and visual clarity. Perfect for documents, resumes, and email.</p>
+            </div>
+
+            <div class="option-card" data-level="extreme">
+              <div class="option-header">
+                <span class="option-title">Extreme Compression</span>
+              </div>
+              <p class="option-desc">Maximum reduction for heavy or scanned PDFs where lowest possible file size is desired.</p>
+            </div>
+          </div>
+
+          <!-- Note on browser PDF compression -->
+          <div class="alert-box alert-info" style="margin-top:14px; font-size:12.5px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <div>
+              <strong>Note:</strong> Pure text/vector PDFs are already compact, so lossless rewriting may yield minimal reduction. For documents with images, Medium or Extreme provides substantial savings.
+            </div>
+          </div>
+
+          <div class="tool-action-bar">
+            <button class="btn-primary-lg" id="compress-btn">
+              Compress PDF Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Progress Card -->
+        <div class="progress-card" id="progress-card">
+          <div class="spinner"></div>
+          <div class="progress-text" id="progress-text">Optimizing PDF document...</div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+          </div>
+        </div>
+
+        <!-- Result Card -->
+        <div class="result-card" id="result-card">
+          <div class="result-icon-success">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h2 class="result-title">PDF Compressed Successfully!</h2>
+          <p class="result-subtitle">Your PDF has been optimized and is ready to download.</p>
+          
+          <div class="comparison-strip">
+            <div class="comparison-box">
+              <div class="comparison-label">Original</div>
+              <div class="comparison-value" id="orig-size-val">0 KB</div>
+            </div>
+            <div class="comparison-arrow">→</div>
+            <div class="comparison-box">
+              <div class="comparison-label">Compressed</div>
+              <div class="comparison-value success" id="comp-size-val">0 KB</div>
+            </div>
+            <div class="comparison-box">
+              <div class="comparison-label">Reduction</div>
+              <span id="savings-val" class="savings-pill">-0%</span>
+            </div>
+          </div>
+
+          <div class="result-actions">
+            <button class="btn-primary-lg" id="download-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download Compressed PDF
+            </button>
+            <button class="btn-outline-lg" id="reset-btn">
+              Compress Another File
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <div>© 2026 Toolswa. All rights reserved. 100% Client-Side Processing.</div>
+          <div class="footer-bottom-links">
+            <a href="../privacy-policy.html">Privacy</a>
+            <a href="../terms.html">Terms</a>
+            <a href="../index.html">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/pdf-compressor.js"></script>
+  </body>
+</html>

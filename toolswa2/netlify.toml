@@ -1,0 +1,87 @@
+# Netlify Configuration for Toolswa Multi-Tools Website
+# Static HTML5, CSS3, & Vanilla JavaScript Website
+
+[build]
+  publish = "."
+
+# Clean URL Routing for Tools (allows /tools/pdf-merge as well as /tools/pdf-merge.html)
+[[redirects]]
+  from = "/tools/pdf-merge"
+  to = "/tools/pdf-merge.html"
+  status = 200
+
+[[redirects]]
+  from = "/tools/pdf-compressor"
+  to = "/tools/pdf-compressor.html"
+  status = 200
+
+[[redirects]]
+  from = "/tools/pdf-split"
+  to = "/tools/pdf-split.html"
+  status = 200
+
+[[redirects]]
+  from = "/tools/image-compressor"
+  to = "/tools/image-compressor.html"
+  status = 200
+
+[[redirects]]
+  from = "/tools/image-resizer"
+  to = "/tools/image-resizer.html"
+  status = 200
+
+[[redirects]]
+  from = "/tools/qr-generator"
+  to = "/tools/qr-generator.html"
+  status = 200
+
+[[redirects]]
+  from = "/tools/word-counter"
+  to = "/tools/word-counter.html"
+  status = 200
+
+[[redirects]]
+  from = "/tools/gst-calculator"
+  to = "/tools/gst-calculator.html"
+  status = 200
+
+# Clean URL Routing for Content Pages
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy-policy.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 200
+
+# Custom 404 Error Page Fallback
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Security and Performance Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/*.zip"
+  [headers.values]
+    Content-Type = "application/zip"
+    Content-Disposition = "attachment; filename=\"toolswa-shared-hosting.zip\""

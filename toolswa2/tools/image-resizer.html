@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resize Image Online – Custom Dimensions & Presets – Toolswa</title>
+    <meta name="description" content="Resize images by dimensions or percentages while maintaining aspect ratio. 100% free and private browser tool." />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Resize Image Online – Toolswa" />
+    <meta property="og:description" content="Resize images by dimensions or percentages while maintaining aspect ratio." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/tools.css" />
+  </head>
+  <body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+      <div class="container header-container">
+        <a href="../index.html" class="brand" aria-label="Toolswa Home">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+          </div>
+          <span class="brand-name">Tools<span>wa</span></span>
+        </a>
+
+        <nav class="nav-menu" id="nav-menu">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="../index.html#all-tools" class="nav-link">All Tools</a>
+          <a href="../about.html" class="nav-link">About Us</a>
+          <a href="../contact.html" class="nav-link">Contact Us</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="btn-icon" id="theme-toggle-btn" title="Toggle Dark/Light Mode">
+            <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+          </button>
+          <a href="../index.html" class="btn-secondary-sm">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="tool-workspace">
+      <!-- Tool Page Header -->
+      <section class="tool-page-header">
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../index.html#all-tools">Image Tools</a>
+            <span>/</span>
+            <span class="current">Image Resizer</span>
+          </div>
+          <h1 class="tool-header-title">Resize Image</h1>
+          <p class="tool-header-subtitle">Easily change image resolution by exact width and height or standard percentage scaling.</p>
+        </div>
+      </section>
+
+      <div class="container tool-container">
+        <!-- Privacy Notice -->
+        <div class="alert-box alert-info">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          <div>
+            <strong>100% Client-Side:</strong> Image resizing happens directly in your browser. No files are uploaded to any server.
+          </div>
+        </div>
+
+        <!-- Upload Dropzone -->
+        <div class="upload-dropzone" id="dropzone">
+          <div class="upload-icon-circle">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 3 21 3 21 9"/>
+              <polyline points="9 21 3 21 3 15"/>
+              <line x1="21" y1="3" x2="14" y2="10"/>
+              <line x1="3" y1="21" x2="10" y2="14"/>
+            </svg>
+          </div>
+          <div class="upload-btn-main">
+            Select Image
+          </div>
+          <p class="upload-hint">or drop image here</p>
+          <p class="upload-formats">Supports JPG, PNG, WebP, SVG, and GIF</p>
+          <input type="file" id="file-input" class="file-input-hidden" accept="image/*" />
+        </div>
+
+        <!-- Configuration Panel -->
+        <div class="tool-controls-panel" id="config-panel" style="display:none;">
+          <div class="controls-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 3 21 3 21 9"/>
+              <polyline points="9 21 3 21 3 15"/>
+            </svg>
+            Resize Options
+          </div>
+
+          <div style="margin-bottom:20px; font-size:14px;" id="file-details"></div>
+
+          <!-- Quick Percentage Presets -->
+          <div class="form-group">
+            <label class="form-label">Quick Scaling Presets</label>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button type="button" class="btn-secondary-sm btn-percent" data-percent="25">25%</button>
+              <button type="button" class="btn-secondary-sm btn-percent" data-percent="50">50%</button>
+              <button type="button" class="btn-secondary-sm btn-percent" data-percent="75">75%</button>
+              <button type="button" class="btn-secondary-sm btn-percent" data-percent="150">150%</button>
+              <button type="button" class="btn-secondary-sm btn-percent" data-percent="200">200%</button>
+            </div>
+          </div>
+
+          <!-- Width and Height Inputs -->
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" for="width-input">Width (pixels)</label>
+              <input type="number" id="width-input" class="form-input" min="1" max="10000" />
+            </div>
+
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" for="height-input">Height (pixels)</label>
+              <input type="number" id="height-input" class="form-input" min="1" max="10000" />
+            </div>
+          </div>
+
+          <!-- Aspect Ratio Lock Checkbox -->
+          <div class="form-group" style="margin-bottom:20px;">
+            <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:14px; font-weight:600;">
+              <input type="checkbox" id="lock-aspect" checked />
+              Lock Aspect Ratio (proportional scaling)
+            </label>
+          </div>
+
+          <!-- Output Format -->
+          <div class="form-group">
+            <label class="form-label" for="format-select">Output Format</label>
+            <select id="format-select" class="form-select">
+              <option value="auto">Original Format</option>
+              <option value="image/png">PNG</option>
+              <option value="image/jpeg">JPG</option>
+              <option value="image/webp">WebP</option>
+            </select>
+          </div>
+
+          <div class="tool-action-bar">
+            <button class="btn-primary-lg" id="resize-btn">
+              Resize Image
+            </button>
+          </div>
+        </div>
+
+        <!-- Progress Card -->
+        <div class="progress-card" id="progress-card">
+          <div class="spinner"></div>
+          <div class="progress-text" id="progress-text">Resizing image...</div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+          </div>
+        </div>
+
+        <!-- Result Card -->
+        <div class="result-card" id="result-card">
+          <div class="result-icon-success">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h2 class="result-title">Image Resized Successfully!</h2>
+          <p class="result-subtitle">Preview the resized image below and download.</p>
+          
+          <div style="background:var(--bg-subtle); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:16px; margin:0 auto 24px; max-width:540px;">
+            <img id="result-preview" alt="Resized Image" style="max-width:100%; max-height:300px; object-fit:contain; border-radius:var(--radius-sm); background:white;" />
+            <div style="display:flex; justify-content:space-around; margin-top:12px; font-size:13.5px; font-weight:700;">
+              <span>New Dimensions: <strong id="result-dimensions" style="color:var(--primary);">0 × 0 px</strong></span>
+              <span>New Size: <strong id="result-size" style="color:var(--primary);">0 KB</strong></span>
+            </div>
+          </div>
+
+          <div class="result-actions">
+            <button class="btn-primary-lg" id="download-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download Resized Image
+            </button>
+            <button class="btn-outline-lg" id="reset-btn">
+              Resize Another Image
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <div>© 2026 Toolswa. All rights reserved. 100% Client-Side Processing.</div>
+          <div class="footer-bottom-links">
+            <a href="../privacy-policy.html">Privacy</a>
+            <a href="../terms.html">Terms</a>
+            <a href="../index.html">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/image-resizer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <defs>
+    <linearGradient id="toolswa-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C4DFF" />
+      <stop offset="100%" stop-color="#5628D8" />
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="10" fill="url(#toolswa-grad)"/>
+  <!-- Layered document sheets / tool icon -->
+  <path d="M12 11C12 9.89543 12.8954 9 14 9H23L29 15V27C29 28.1046 28.1046 29 27 29H14C12.8954 29 12 28.1046 12 27V11Z" fill="#FFFFFF" fill-opacity="0.3"/>
+  <path d="M10 14C10 12.8954 10.8954 12 12 12H21L27 18V30C27 31.1046 26.1046 32 25 32H12C10.8954 32 10 31.1046 10 30V14Z" fill="#FFFFFF"/>
+  <path d="M21 12V18H27L21 12Z" fill="#E0D4FC"/>
+  <!-- T letter / check mark cutout -->
+  <path d="M14 18H20M17 18V26" stroke="#6C3CE9" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

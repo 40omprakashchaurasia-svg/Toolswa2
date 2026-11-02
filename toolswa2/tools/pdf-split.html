@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split PDF Online – Extract Pages from PDF – Toolswa</title>
+    <meta name="description" content="Split PDF pages into individual documents or extract custom page ranges. Fast, 100% private in-browser tool." />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Split PDF Online – Toolswa" />
+    <meta property="og:description" content="Split PDF pages into individual documents or extract custom page ranges. 100% private & free." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/tools.css" />
+
+    <!-- PDF-Lib & JSZip Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.9/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+      <div class="container header-container">
+        <a href="../index.html" class="brand" aria-label="Toolswa Home">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+          </div>
+          <span class="brand-name">Tools<span>wa</span></span>
+        </a>
+
+        <nav class="nav-menu" id="nav-menu">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="../index.html#all-tools" class="nav-link">All Tools</a>
+          <a href="../about.html" class="nav-link">About Us</a>
+          <a href="../contact.html" class="nav-link">Contact Us</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="btn-icon" id="theme-toggle-btn" title="Toggle Dark/Light Mode">
+            <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+          </button>
+          <a href="../index.html" class="btn-secondary-sm">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="tool-workspace">
+      <!-- Tool Page Header -->
+      <section class="tool-page-header">
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../index.html#all-tools">PDF Tools</a>
+            <span>/</span>
+            <span class="current">Split PDF</span>
+          </div>
+          <h1 class="tool-header-title">Split PDF Document</h1>
+          <p class="tool-header-subtitle">Extract specific page ranges or separate all pages into individual PDF files.</p>
+        </div>
+      </section>
+
+      <div class="container tool-container">
+        <!-- Privacy Notice -->
+        <div class="alert-box alert-info">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          <div>
+            <strong>100% Client-Side:</strong> Your PDF pages are extracted locally inside your web browser. No files are uploaded to any server.
+          </div>
+        </div>
+
+        <!-- Upload Dropzone -->
+        <div class="upload-dropzone" id="dropzone">
+          <div class="upload-icon-circle">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="8" y1="13" x2="16" y2="13"/>
+            </svg>
+          </div>
+          <div class="upload-btn-main">
+            Select PDF file
+          </div>
+          <p class="upload-hint">or drop PDF file here</p>
+          <p class="upload-formats">Supports standard PDF documents</p>
+          <input type="file" id="file-input" class="file-input-hidden" accept="application/pdf" />
+        </div>
+
+        <!-- Configuration Panel -->
+        <div class="tool-controls-panel" id="config-panel" style="display:none;">
+          <div class="controls-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"/>
+              <rect x="14" y="3" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+            Split Configuration
+          </div>
+
+          <div style="margin-bottom:20px; font-size:14px;" id="file-details"></div>
+
+          <!-- Mode Selector -->
+          <div class="form-group">
+            <label class="form-label">Split Mode</label>
+            <div style="display:flex; gap:20px; flex-wrap:wrap;">
+              <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:14px; font-weight:600;">
+                <input type="radio" name="split-mode" value="range" checked />
+                Extract Custom Page Range (Single PDF)
+              </label>
+              <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:14px; font-weight:600;">
+                <input type="radio" name="split-mode" value="all" />
+                Extract All Pages (Individual PDFs in ZIP)
+              </label>
+            </div>
+          </div>
+
+          <!-- Range Selection Container -->
+          <div id="range-selection-container">
+            <div class="form-group">
+              <label class="form-label" for="range-input">Pages to Extract</label>
+              <input type="text" id="range-input" class="form-input" placeholder="e.g. 1-3, 5, 8-10" />
+              <p class="form-hint">Type page numbers or click on the pages below to select/deselect them.</p>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <span style="font-size:13px; font-weight:700; color:var(--text-main);">Click Pages to Select:</span>
+              <div style="display:flex; gap:8px;">
+                <button type="button" class="btn-secondary-sm" id="select-all-btn">Select All</button>
+                <button type="button" class="btn-secondary-sm" id="deselect-all-btn">Clear All</button>
+              </div>
+            </div>
+
+            <!-- Page Selection Grid -->
+            <div class="split-page-grid" id="page-grid"></div>
+          </div>
+
+          <div class="tool-action-bar">
+            <button class="btn-primary-lg" id="split-btn">
+              Split PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Progress Card -->
+        <div class="progress-card" id="progress-card">
+          <div class="spinner"></div>
+          <div class="progress-text" id="progress-text">Splitting PDF pages...</div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+          </div>
+        </div>
+
+        <!-- Result Card -->
+        <div class="result-card" id="result-card">
+          <div class="result-icon-success">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h2 class="result-title">PDF Split Successfully!</h2>
+          <p class="result-subtitle" id="result-desc">Your resulting files are ready to download.</p>
+          
+          <div class="result-actions">
+            <button class="btn-primary-lg" id="download-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download Result
+            </button>
+            <button class="btn-outline-lg" id="reset-btn">
+              Split Another File
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <div>© 2026 Toolswa. All rights reserved. 100% Client-Side Processing.</div>
+          <div class="footer-bottom-links">
+            <a href="../privacy-policy.html">Privacy</a>
+            <a href="../terms.html">Terms</a>
+            <a href="../index.html">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/pdf-split.js"></script>
+  </body>
+</html>
